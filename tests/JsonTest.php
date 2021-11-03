@@ -2,8 +2,8 @@
 
 namespace Tanthammar\Json\Tests;
 
-use Tanthammar\Json\Json;
 use PHPUnit\Framework\TestCase;
+use Tanthammar\Json\Json;
 
 class JsonTest extends TestCase
 {

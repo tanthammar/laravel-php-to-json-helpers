@@ -32,7 +32,8 @@ class Json
     public static function encode(
         mixed $expression,
         int|string|null $options = JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT,
-        int $depth = 512): string
+        int $depth = 512
+    ): string
     {
         return json_encode($expression, $options, $depth);
     }

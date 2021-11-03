@@ -42,6 +42,5 @@ class JsonServiceProvider extends PackageServiceProvider
         Blade::directive('jsonStr', function ($expression) {
             return "<?php echo Tanthammar\Json::str($expression) ?>";
         });
-
     }
 }
