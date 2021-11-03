@@ -1,5 +1,5 @@
 {
-    "name": "vendor_slug/package_slug",
+    "name": "tanthammar/laravel-php-to-json-helpers",
     "description": "Laravel Blade directives and methods to compile PHP expressions into single-quoted JavaScript objects, arrays, booleans and strings",
     "keywords": [
         "tanthammar",
@@ -17,15 +17,13 @@
     ],
     "require": {
         "php": "^8.0",
-        "spatie/laravel-package-tools": "^1.4.3",
-        "illuminate/contracts": "^8.37"
+        "illuminate/contracts": "^8.69",
+        "spatie/laravel-package-tools": "^1.4.3"
     },
     "require-dev": {
         "nunomaduro/collision": "^5.3",
         "nunomaduro/larastan": "^1.0",
         "orchestra/testbench": "^6.15",
-        "pestphp/pest": "^1.18",
-        "pestphp/pest-plugin-laravel": "^1.1",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan-deprecation-rules": "^1.0",
         "phpstan/phpstan-phpunit": "^1.0",
@@ -34,8 +32,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Tanthammar\\Json\\": "src",
-            "Tanthammar\\Json\\Database\\Factories\\": "database/factories"
+            "Tanthammar\\Json\\": "src"
         }
     },
     "autoload-dev": {

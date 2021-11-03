@@ -2,24 +2,46 @@
 
 namespace Tanthammar\Json;
 
+use Illuminate\Support\Facades\Blade;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Tanthammar\Json\Commands\JsonCommand;
 
 class JsonServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
-        /*
-         * This class is a Package Service Provider
-         *
-         * More info: https://github.com/spatie/laravel-package-tools
+        $package->name('laravel-php-to-json-helpers');
+    }
+
+    public function bootingPackage()
+    {
+        /**
+         * Compile a PHP expression into a DOUBLE-quoted JavaScript object, array, boolean or  string.
          */
-        $package
-            ->name('laravel-php-to-json-helpers')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel-php-to-json-helpers_table')
-            ->hasCommand(JsonCommand::class);
+        Blade::directive('jsonEncode', function ($expression) {
+            return "<?php echo Tanthammar\Json::encode($expression) ?>";
+        });
+
+        /**
+         * Compile a PHP expression into a SINGLE-quoted JavaScript object, array, boolean or  string.
+         */
+        Blade::directive('jsonParse', function ($expression) {
+            return "<?php echo Tanthammar\Json::parse($expression) ?>";
+        });
+
+        /**
+         * Compile a PHP boolean into JavaScript true/false.
+         */
+        Blade::directive('jsonBool', function ($expression) {
+            return "<?php echo Tanthammar\Json::bool($expression) ?>";
+        });
+
+        /**
+         * Compile a PHP string into a SINGLE-quoted JavaScript string.
+         */
+        Blade::directive('jsonStr', function ($expression) {
+            return "<?php echo Tanthammar\Json::str($expression) ?>";
+        });
+
     }
 }

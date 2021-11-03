@@ -15,55 +15,12 @@ You can install the package via composer:
 composer require tanthammar/laravel-php-to-json-helpers
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --provider="Tanthammar\Json\JsonServiceProvider" --tag="laravel-php-to-json-helpers-migrations"
-php artisan migrate
-```
-
-You can publish the config file with:
-```bash
-php artisan vendor:publish --provider="Tanthammar\Json\JsonServiceProvider" --tag="laravel-php-to-json-helpers-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
 ## Usage
 
-```php
-$laravel-php-to-json-helpers = new Tanthammar\Json();
-echo $laravel-php-to-json-helpers->echoPhrase('Hello, Tanthammar!');
+```blade
+<div x-data="{ foo: @jsonParse(['hi' => 'hello']) }"></div>
+
+<x-foo x-data="{ 
+    foo: {{ Tanthammar\Json::parse(['hi' => 'hello']) }} 
+}"></x-foo>
 ```
-
-## Testing
-
-```bash
-composer test
-```
-
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
-
-## Security Vulnerabilities
-
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
-
-## Credits
-
-- [Tina Hammar](https://github.com/tanthammar)
-- [All Contributors](../../contributors)
-
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
