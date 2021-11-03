@@ -1,17 +1,17 @@
 {
     "name": "vendor_slug/package_slug",
-    "description": ":package_description",
+    "description": "Laravel Blade directives and methods to compile PHP expressions into single-quoted JavaScript objects, arrays, booleans and strings",
     "keywords": [
-        ":vendor_name",
+        "tanthammar",
         "laravel",
-        ":package_slug"
+        "laravel-php-to-json-helpers"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/tanthammar/laravel-php-to-json-helpers",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Tina Hammar",
+            "email": "tinahammar@gmail.com",
             "role": "Developer"
         }
     ],
@@ -34,13 +34,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Tanthammar\\Json\\": "src",
+            "Tanthammar\\Json\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Tanthammar\\Json\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -54,10 +54,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Tanthammar\\Json\\JsonServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\SkeletonFacade"
+                "Json": "Tanthammar\\Json\\JsonFacade"
             }
         }
     },

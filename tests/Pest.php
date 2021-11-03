@@ -1,5 +1,5 @@
 <?php
 
-use VendorName\Skeleton\Tests\TestCase;
+use Tanthammar\Json\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);
